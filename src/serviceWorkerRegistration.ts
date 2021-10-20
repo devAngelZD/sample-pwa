@@ -17,6 +17,8 @@ const registerToServicerWorker = (): void => {
           // eslint-disable-next-line no-param-reassign
           registration.onupdatefound = () => {
             const installingWorker = registration!.installing;
+
+            console.log(installingWorker)
            if(installingWorker){
             installingWorker.onstatechange = () => {
               if (installingWorker.state === 'installed') {
