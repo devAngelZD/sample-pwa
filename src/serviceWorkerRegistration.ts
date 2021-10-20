@@ -31,7 +31,8 @@ const registerToServicerWorker = (): void => {
                     'New content is available and will be used when all ' +
                       'tabs for this page are closed. See http://bit.ly/CRA-PWA.'
                   );
-                  // window.location.reload();
+                  console.log(BUILD_VERSION)
+                  window.location.reload();
 
                 } else {
                   // At this point, everything has been precached.
