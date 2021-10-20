@@ -13,8 +13,8 @@ const registerToServicerWorker = (): void => {
     if (isServiceWorkerSupported()) {
       wb.register()
         .then(registration => {
-          // @ts-ignore
-          // eslint-disable-next-line no-param-reassign
+          if(registration){
+           // eslint-disable-next-line no-param-reassign
           registration.onupdatefound = () => {
             const installingWorker = registration!.installing;
 
@@ -27,11 +27,6 @@ const registerToServicerWorker = (): void => {
                   // At this point, the updated precached content has been fetched,
                   // but the previous service worker will still serve the older
                   // content until all client tabs are closed.
-                  console.log(
-                    'New content is available and will be used when all ' +
-                      'tabs for this page are closed. See http://bit.ly/CRA-PWA.'
-                  );
-                  console.log(BUILD_VERSION)
                   window.location.reload();
 
                 } else {
@@ -45,6 +40,7 @@ const registerToServicerWorker = (): void => {
             };
            }
           };
+         }
         })
         .catch(err => {
           console.error('Service Worker registration failed:', err);
