@@ -3,15 +3,11 @@ import { precacheAndRoute } from 'workbox-precaching';
 
 declare const self: ServiceWorkerGlobalScope;
 
-// // @ts-ignore
-// self.addEventListener('install', event => {
-//   console.log('change dapat mag load')
-// // @ts-ignore
-//   self.skipWaiting();
-// console.log(event)
-//   window.location.reload();
-
-// })
+// @ts-ignore
+self.addEventListener('install', event => {
+// @ts-ignore
+  self.skipWaiting();
+})
 
 
 clientsClaim();
