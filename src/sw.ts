@@ -9,7 +9,6 @@ self.addEventListener('install', event => {
   self.skipWaiting();
 })
 
-
 clientsClaim();
 
 // eslint-disable-next-line no-underscore-dangle
