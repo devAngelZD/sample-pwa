@@ -1,12 +1,12 @@
-import { clientsClaim, skipWaiting } from 'workbox-core';
+import { clientsClaim } from 'workbox-core';
 import { precacheAndRoute } from 'workbox-precaching';
 
 declare const self: ServiceWorkerGlobalScope;
 
 // @ts-ignore
 self.addEventListener('install', event => {
-  console.log(caches)
-  console.log(event)
+
+  console.log('change')
 // @ts-ignore
   self.skipWaiting(()=> window.location.reload());
 

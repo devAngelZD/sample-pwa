@@ -18,9 +18,10 @@ const registerToServicerWorker = (): void => {
           registration.onupdatefound = () => {
             const installingWorker = registration!.installing;
 
-            console.log(installingWorker)
            if(installingWorker){
             installingWorker.onstatechange = () => {
+
+
               if (installingWorker.state === 'installed') {
                 if (navigator.serviceWorker.controller) {
                   // At this point, the updated precached content has been fetched,
