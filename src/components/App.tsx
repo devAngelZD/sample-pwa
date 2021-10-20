@@ -1,7 +1,7 @@
 import React from 'react';
 
 const App = () => {
-  return <div className="helloooo">This is a sample pwa site 4 </div>;
+  return <div className="helloooo">This is a sample pwa site {BUILD_VERSION} </div>;
 };
 
 export default App;
