@@ -5,24 +5,12 @@ declare const self: ServiceWorkerGlobalScope;
 
 // @ts-ignore
 self.addEventListener('install', event => {
-
   console.log('change dapat mag load')
 // @ts-ignore
   self.skipWaiting();
-
+console.log(event)
   window.location.reload();
-  // event.waitUntil(
-  //   caches
-  //     .open('my-site-name')
-  //     .then(cache =>
-  //       cache.addAll([
-  //         'favicon.ico',
-  //         'style.css',
-  //         'script.js',
-  //         'https://fonts.googleapis.com/css?family=Inconsolata:400,700'
-  //       ])
-  //     )
-  // )
+
 })
 
 
