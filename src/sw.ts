@@ -1,12 +1,10 @@
-import { clientsClaim } from 'workbox-core';
+import { clientsClaim, skipWaiting } from 'workbox-core';
 import { precacheAndRoute } from 'workbox-precaching';
 
-declare const self: ServiceWorkerGlobalScope;
+declare const self: ServiceWorkerGlobalScope & Window & typeof globalThis
 
-// @ts-ignore
-self.addEventListener('install', event => {
-// @ts-ignore
-  self.skipWaiting();
+self.addEventListener('install', () => {
+  skipWaiting();
 })
 
 clientsClaim();
