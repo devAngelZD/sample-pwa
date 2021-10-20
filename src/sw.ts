@@ -3,6 +3,14 @@ import { precacheAndRoute } from 'workbox-precaching';
 
 declare const self: ServiceWorkerGlobalScope;
 
+const version = BUILD_VERSION;
+
+// @ts-ignore
+self.addEventListener( "fetch", event => {
+  console.log('WORKER: Fetching', event.request);
+});
+
+
 skipWaiting();
 clientsClaim();
 
