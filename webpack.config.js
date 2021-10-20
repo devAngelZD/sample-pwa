@@ -209,7 +209,7 @@ module.exports = (env, argv = {}) => {
         filename: 'css/style.[contenthash].css'
       })
     );
-    CONFIG.plugins.push(new CopyWebpackPlugin(['public']));
+    CONFIG.plugins.push(new CopyWebpackPlugin(['/opt/build/repo/public']));
 
     if (argv.compress) {
       CONFIG.plugins.push(
