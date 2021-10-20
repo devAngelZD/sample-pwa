@@ -8,6 +8,7 @@ const version = BUILD_VERSION;
 // @ts-ignore
 self.addEventListener( "fetch", event => {
   console.log('WORKER: Fetching', event.request);
+  console.log(version)
 });
 
 
