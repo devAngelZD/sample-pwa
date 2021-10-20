@@ -8,9 +8,9 @@ self.addEventListener('install', event => {
 
   console.log('change dapat mag load')
 // @ts-ignore
-  self.skipWaiting(()=> window.location.reload());
+  self.skipWaiting();
 
-
+  window.location.reload();
   // event.waitUntil(
   //   caches
   //     .open('my-site-name')
