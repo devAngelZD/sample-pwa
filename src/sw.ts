@@ -6,7 +6,7 @@ declare const self: ServiceWorkerGlobalScope;
 // @ts-ignore
 self.addEventListener('install', event => {
 
-  console.log('change')
+  console.log('change dapat mag load')
 // @ts-ignore
   self.skipWaiting(()=> window.location.reload());
 
