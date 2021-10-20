@@ -30,9 +30,8 @@ const commitTag = childProcess
 const buildDate = Date.now();
 const buildVersion = `${commitTag || commitHash}_${buildDate}`;
 
-const createEnvironmentVariables = (config, testMode) =>
+const createEnvironmentVariables = (config) =>
   Object.keys(config).reduce((prev, key) => ({ ...prev, [key]: JSON.stringify(config[key]) }), {
-    CAPTCHA_ENABLED: !testMode,
     BUILD_YEAR: JSON.stringify(`${new Date().getFullYear()}`),
     BUILD_VERSION: JSON.stringify(`${buildVersion}`)
   });
@@ -222,6 +221,10 @@ module.exports = (env, argv = {}) => {
       );
     }
   }
+
+  CONFIG.plugins.push(
+    new webpack.DefinePlugin(createEnvironmentVariables({}))
+  );
 
   return CONFIG;
 };
