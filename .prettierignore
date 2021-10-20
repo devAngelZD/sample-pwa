@@ -1,0 +1,11 @@
+# Configuration
+.prettierignore
+package.json
+
+# Dependency directories
+public/
+node_modules/
+vendor/
+
+# Ignored file types
+*.snap

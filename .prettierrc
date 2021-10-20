@@ -1,0 +1,32 @@
+{
+  "overrides": [
+    {
+      "files": "*.md",
+      "options": {
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": ["*.json", ".babelrc", ".prettierrc", ".stylelintrc"],
+      "options": {
+        "parser": "json"
+      }
+    },
+    {
+      "files": "*.scss",
+      "options": {
+        "parser": "scss"
+      }
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "parser": "typescript"
+      }
+    }
+  ],
+  "printWidth": 120,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "endOfLine": "lf"
+}
