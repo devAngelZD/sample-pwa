@@ -1,0 +1,9 @@
+dist/
+node_modules/
+npm-debug.log*
+yarn-error.log
+.cache-loader
+.history
+package-lock.json
+bash.exe.stackdump
+*.swp
