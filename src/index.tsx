@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 
 import App from 'components/App';
 
-import { registerToServicerWorker } from './serviceWorkerRegistration';
+import * as serviceWorker from './serviceWorkerRegistration';
 
 render(<App />, document.getElementById('app'));
 
-registerToServicerWorker();
+serviceWorker.unregister();
