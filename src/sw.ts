@@ -9,6 +9,5 @@ self.addEventListener('install', () => {
 
 clientsClaim();
 
-precacheAndRoute([{
-  url: '/index.html'
-}]);
+// eslint-disable-next-line no-underscore-dangle
+precacheAndRoute(self.__WB_MANIFEST);
