@@ -19,6 +19,7 @@ self.addEventListener('install', (event: any) => {
 clientsClaim();
 // eslint-disable-next-line no-underscore-dangle
 const precacheUrls = self.__WB_MANIFEST;
+console.log(precacheUrls)
 if (precacheUrls) {
   precacheAndRoute(precacheUrls);
 }
