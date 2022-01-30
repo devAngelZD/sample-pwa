@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
-import { Workbox } from "workbox-window";
+import {  useState } from "react";
+// import { Workbox } from "workbox-window";
 
 const useServiceWorker = () => {
-  const [isUpdateAvailable, setIsUpdateAvailable] = useState(false)
+  const [isUpdateAvailable] = useState(false)
 
   const isServiceWorkerSupported =  'serviceWorker' in navigator;
   console.log(isServiceWorkerSupported)
