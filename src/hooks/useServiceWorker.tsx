@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Workbox } from "workbox-window";
 
 const useServiceWorker = () => {
@@ -27,6 +27,7 @@ wb.register()
           // but the previous service worker will still serve the older
           // content until all client tabs are closed.
 console.log('old service worker')
+setHasNewVersion(true)
         } else {
           // At this point, everything has been precached.
           // It's the perfect time to display a
@@ -50,9 +51,15 @@ console.log('old service worker')
 
 
 
+
+
 }, [isServiceWorkerSupported])
 
 
+useEffect(()=> {
+  register()
+// eslint-disable-next-line react-hooks/exhaustive-deps
+}, [])
   return { hasNewVersion };
 };
 
