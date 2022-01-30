@@ -8,10 +8,11 @@ declare const self: ServiceWorkerGlobalScope & Window & typeof globalThis
 // })
 
 self.addEventListener('install', (event: any) => {
-  const urls:any = [/* ... */];
+  // const urls:any = [/* ... */];
   const cacheName = cacheNames.runtime;
   console.log(cacheName)
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
+  console.log(event)
+  // event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
 });
 
 // eslint-disable-next-line no-underscore-dangle
