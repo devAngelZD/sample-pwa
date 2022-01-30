@@ -8,7 +8,7 @@ const isServiceWorkerSupported =  'serviceWorker' in navigator;
 const register = useCallback(()=> {
   window.addEventListener('load', () => {
     if(isServiceWorkerSupported){
-      const wb = new Workbox('/sw.js');
+      const wb = new Workbox('..//sw.js');
 
       wb.register()
       .then(registration => {

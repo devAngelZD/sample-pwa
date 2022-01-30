@@ -187,7 +187,8 @@ module.exports = (env, argv = {}) => {
       // })
       new InjectManifest({
         swSrc: './src/sw.ts',
-        swDest: 'sw.js'
+        swDest: 'sw.js',
+        revision: buildVersion
       })
     ],
     resolve: {
