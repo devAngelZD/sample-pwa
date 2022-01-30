@@ -14,7 +14,11 @@ self.addEventListener('install', (event: any) => {
   event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
 });
 
+// eslint-disable-next-line no-underscore-dangle
+const precacheUrls = self.__WB_MANIFEST;
+if (precacheUrls) {
+  precacheAndRoute(precacheUrls);
+}
+
 // clientsClaim();
 
-// eslint-disable-next-line no-underscore-dangle
-precacheAndRoute(self.__WB_MANIFEST);
