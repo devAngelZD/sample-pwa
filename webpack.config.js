@@ -13,7 +13,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
-const {  GenerateSW } = require('workbox-webpack-plugin');
+// const {  GenerateSW } = require('workbox-webpack-plugin');
+const { InjectManifest } = require('workbox-webpack-plugin');
 
 // const environmentVars = require('./environment.json');
 
@@ -179,10 +180,14 @@ module.exports = (env, argv = {}) => {
         emitErrors: false
       }),
       new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /en-us/),
-      new GenerateSW({
-        swDest: 'sw.js',
-        clientsClaim: true,
-        skipWaiting: true,
+      // new GenerateSW({
+      //   swDest: 'sw.js',
+      //   clientsClaim: true,
+      //   skipWaiting: true,
+      // })
+      new InjectManifest({
+        swSrc: './src/sw.ts',
+        swDest: 'sw.js'
       })
     ],
     resolve: {
